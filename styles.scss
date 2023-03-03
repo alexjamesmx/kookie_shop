@@ -1,0 +1,176 @@
+@use "background";
+$card-height: 350px;
+$card-bg: #c77676;
+$card-width: auto;
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #dfdbe5;
+    background-image: background.$body-bg;
+}
+nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 80px;
+    background: #c77676;
+
+    display: flex;
+    justify-content: space-between;
+    ul {
+        width: 100%;
+        height: inherit;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            margin-inline: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                color: black;
+                font-size: 2rem;
+                font-weight: bold;
+            }
+            img {
+                width: 48px;
+                height: 48px;
+            }
+        }
+        //last li
+        &:last-child {
+            margin-inline: 4rem;
+        }
+    }
+    .nav-menu {
+        img {
+            display: none;
+        }
+    }
+}
+
+header {
+    min-width: 250px;
+    max-height: 400px;
+    width: 100%;
+    height: 400px;
+    background-image: url("./assets/img/wallpaperflare.com_wallpaper (4).jpg");
+}
+figure {
+    margin: 0;
+    padding: 0;
+}
+.cards-container {
+    padding: 4rem;
+    position: relative;
+    top: -10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4rem;
+}
+.header-div {
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.titulo {
+    font-size: 6rem;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card {
+    background: $card-bg;
+    width: $card-width;
+    height: $card-height;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.card-figure {
+    width: 100%;
+    height: 80%;
+}
+.card-img {
+    width: inherit;
+    height: 100%;
+    object-fit: cover;
+}
+.card-title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+.card-info {
+    display: flex;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(255, 255, 153);
+    justify-content: space-between;
+    margin-inline: 2rem;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.footer-div {
+    background-color: #c77676;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.footer-title {
+    margin-inline: 2rem;
+}
+.footer-text {
+    margin-inline: 2rem;
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .titulo {
+        font-size: 4rem;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        margin-inline: 2rem;
+    }
+    .nav-menu {
+        width: 20%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        img {
+            display: block !important;
+            width: 48px;
+            height: 48px;
+            margin-inline: 2.4rem;
+        }
+    }
+    .nav-ul {
+        display: none;
+    }
+}
